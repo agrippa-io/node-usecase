@@ -1,4 +1,4 @@
-import UseCase from './UseCase'
+import { UseCase } from './UseCase'
 
 export interface InterfaceUseCaseChainNode {
   key?: string
@@ -8,7 +8,7 @@ export interface InterfaceUseCaseChainNode {
     | ((chainMap: Record<string, any>, ...args: any) => Promise<Array<any>>)
 }
 
-class UseCaseChain extends UseCase {
+export class UseCaseChain extends UseCase {
   private _chain: InterfaceUseCaseChainNode[] = []
   private resultsMappedByKey: Record<string, any>
 
@@ -44,10 +44,7 @@ class UseCaseChain extends UseCase {
       let previousResults: any = {}
 
       for (const useCase of this._chain) {
-        const generatedConstructorArgs = await useCase.constructorArguments(
-          this.resultsMappedByKey,
-          previousResults
-        )
+        const generatedConstructorArgs = await useCase.constructorArguments(this.resultsMappedByKey, previousResults)
         const generatedUseCase = new useCase.node(...generatedConstructorArgs)
 
         await generatedUseCase.perform()
@@ -69,5 +66,3 @@ class UseCaseChain extends UseCase {
     }
   }
 }
-
-export default UseCaseChain

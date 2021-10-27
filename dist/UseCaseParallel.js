@@ -8,13 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const Logger_1 = __importDefault(require("@agrippa-io/node-utils/src/Logger"));
-const UseCase_1 = __importDefault(require("./UseCase"));
-class UseCaseParallel extends UseCase_1.default {
+exports.UseCaseParallel = void 0;
+const node_utils_1 = require("@agrippa-io/node-utils");
+const UseCase_1 = require("./UseCase");
+class UseCaseParallel extends UseCase_1.UseCase {
     constructor(params) {
         var _a;
         super();
@@ -25,7 +23,7 @@ class UseCaseParallel extends UseCase_1.default {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const instantiatedUseCases = this.useCases.map((useCaseNode) => {
-                    Logger_1.default.info(`${useCaseNode.node.name} :: ${JSON.stringify(useCaseNode.parameters)}`);
+                    node_utils_1.Logger.info(`${useCaseNode.node.name} :: ${JSON.stringify(useCaseNode.parameters)}`);
                     return new useCaseNode.node(useCaseNode.parameters);
                 });
                 let performPromises = instantiatedUseCases.map((useCaseInstance) => useCaseInstance.perform());
@@ -45,5 +43,5 @@ class UseCaseParallel extends UseCase_1.default {
         });
     }
 }
-exports.default = UseCaseParallel;
+exports.UseCaseParallel = UseCaseParallel;
 //# sourceMappingURL=UseCaseParallel.js.map

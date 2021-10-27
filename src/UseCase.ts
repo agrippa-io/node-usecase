@@ -1,4 +1,4 @@
-export default abstract class UseCase {
+export abstract class UseCase {
   protected _result: any
   private _success = false
   private _error: any

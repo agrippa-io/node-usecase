@@ -1,6 +1,6 @@
-import Logger from '@agrippa-io/node-utils/src/Logger'
+import { Logger } from '@agrippa-io/node-utils'
 
-import UseCase from './UseCase'
+import { UseCase } from './UseCase'
 
 export interface InterfaceUseCaseParallenNode<UseCaseType extends UseCase, UseCaseParameters> {
   node: new (UseCaseParameters) => UseCaseType
@@ -14,7 +14,7 @@ export interface InterfaceUseCaseParallelParameters {
   ignoreRejects?: boolean
 }
 
-class UseCaseParallel extends UseCase {
+export class UseCaseParallel extends UseCase {
   private useCases: TypeUseCaseNodeArray
   private ignoreRejects: boolean
 
@@ -54,5 +54,3 @@ class UseCaseParallel extends UseCase {
     }
   }
 }
-
-export default UseCaseParallel

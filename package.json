@@ -1,8 +1,13 @@
 {
   "name": "@agrippa-io/node-usecase",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "type": "module",
   "description": "NodeJs Usecase Library",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,8 +30,8 @@
     "prettier": "^2.4.1"
   },
   "dependencies": {
-    "@agrippa-io/node-errors": "^1.0.0",
-    "@agrippa-io/node-utils": "^1.0.0",
+    "@agrippa-io/node-errors": "^1.0.3",
+    "@agrippa-io/node-utils": "^1.0.2",
     "express": "^4.17.1"
   }
 }

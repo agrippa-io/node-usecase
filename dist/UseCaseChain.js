@@ -8,12 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const UseCase_1 = __importDefault(require("./UseCase"));
-class UseCaseChain extends UseCase_1.default {
+exports.UseCaseChain = void 0;
+const UseCase_1 = require("./UseCase");
+class UseCaseChain extends UseCase_1.UseCase {
     constructor(chain) {
         super();
         this._chain = [];
@@ -59,5 +57,5 @@ class UseCaseChain extends UseCase_1.default {
         });
     }
 }
-exports.default = UseCaseChain;
+exports.UseCaseChain = UseCaseChain;
 //# sourceMappingURL=UseCaseChain.js.map
