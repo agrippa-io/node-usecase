@@ -1,7 +1,6 @@
 {
   "name": "@agrippa-io/node-usecase",
-  "version": "1.0.1",
-  "type": "module",
+  "version": "1.0.2",
   "description": "NodeJs Usecase Library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
