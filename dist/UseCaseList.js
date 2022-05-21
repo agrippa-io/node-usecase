@@ -5,14 +5,27 @@ const UseCase_1 = require("./UseCase");
 class UseCaseList extends UseCase_1.UseCase {
     constructor() {
         super(...arguments);
-        this.page = 0;
-        this.pageSize = 10;
+        this._page = 0;
+        this._pageSize = 10;
     }
-    get skip() {
-        return Math.max(this.page * this.pageSize, 0);
+    set page(value) {
+        this._page = value;
+    }
+    set pageSize(value) {
+        this._pageSize = value;
+    }
+    // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
+    get page() {
+        return Math.max(this._page, 0);
+    }
+    get pageSize() {
+        return this._pageSize;
     }
     get limit() {
         return Math.abs(this.pageSize);
+    }
+    get skip() {
+        return Math.max(this.page * this.pageSize, 0);
     }
 }
 exports.UseCaseList = UseCaseList;
