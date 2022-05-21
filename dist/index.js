@@ -11,6 +11,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./UseCase"), exports);
+__exportStar(require("./UseCaseList"), exports);
 __exportStar(require("./UseCaseChain"), exports);
 __exportStar(require("./UseCaseParallel"), exports);
 //# sourceMappingURL=index.js.map
