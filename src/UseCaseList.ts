@@ -17,6 +17,7 @@ export abstract class UseCaseList extends UseCase {
     return Math.max(this._page, 0)
   }
 
+  // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
   get pageSize(): number {
     return this._pageSize
   }
