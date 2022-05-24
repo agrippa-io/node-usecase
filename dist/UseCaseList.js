@@ -16,11 +16,13 @@ class UseCaseList extends UseCase_1.UseCase {
     }
     // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
     get page() {
-        return Math.max(this._page, 0);
+        var _a;
+        return Math.max((_a = this._page) !== null && _a !== void 0 ? _a : 0, 0);
     }
     // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
     get pageSize() {
-        return this._pageSize;
+        var _a;
+        return (_a = this._pageSize) !== null && _a !== void 0 ? _a : 10;
     }
     get limit() {
         return Math.abs(this.pageSize);

@@ -14,12 +14,12 @@ export abstract class UseCaseList extends UseCase {
 
   // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
   get page(): number {
-    return Math.max(this._page, 0)
+    return Math.max(this._page ?? 0, 0)
   }
 
   // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
   get pageSize(): number {
-    return this._pageSize
+    return this._pageSize ?? 10
   }
 
   get limit(): number {
