@@ -7,5 +7,6 @@ export declare abstract class UseCaseList extends UseCase {
     get page(): number;
     get pageSize(): number;
     get limit(): number;
+    get take(): number;
     get skip(): number;
 }

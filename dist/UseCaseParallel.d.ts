@@ -1,9 +1,9 @@
 import { UseCase } from './UseCase';
 export interface InterfaceUseCaseParallenNode<UseCaseType extends UseCase, UseCaseParameters> {
-    node: new (UseCaseParameters: any) => UseCaseType;
+    node: new (params: UseCaseParameters) => UseCaseType;
     parameters: UseCaseParameters;
 }
-export declare type TypeUseCaseNodeArray = Array<InterfaceUseCaseParallenNode<UseCase, any>>;
+export type TypeUseCaseNodeArray = Array<InterfaceUseCaseParallenNode<UseCase, any>>;
 export interface InterfaceUseCaseParallelParameters {
     nodes: TypeUseCaseNodeArray;
     ignoreRejects?: boolean;

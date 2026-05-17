@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "declaration": true,
-    "target": "es6",
+    "target": "es2022",
     "module": "commonjs",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./@types", "./node_modules/@types"]
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "types": ["node", "vitest/globals"]
   },
-  "include": ["src/**/*.ts", "src/**/*.js"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "coverage"]
 }

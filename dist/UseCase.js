@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UseCase = void 0;
 class UseCase {
-    constructor() {
-        this._success = false;
-    }
+    _result;
+    _success = false;
+    _error;
     get success() {
         return this._success;
     }
@@ -25,4 +25,3 @@ class UseCase {
     }
 }
 exports.UseCase = UseCase;
-//# sourceMappingURL=UseCase.js.map

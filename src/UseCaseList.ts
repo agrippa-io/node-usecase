@@ -1,4 +1,4 @@
-import { UseCase } from './UseCase'
+import { UseCase } from 'src/UseCase'
 
 export abstract class UseCaseList extends UseCase {
   private _page = 0
@@ -12,17 +12,20 @@ export abstract class UseCaseList extends UseCase {
     this._pageSize = value
   }
 
-  // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
   get page(): number {
     return Math.max(this._page ?? 0, 0)
   }
 
-  // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
   get pageSize(): number {
     return this._pageSize ?? 10
   }
 
+  // Limit and Take are used synomously depending on the framework
   get limit(): number {
+    return Math.abs(this.pageSize)
+  }
+
+  get take(): number {
     return Math.abs(this.pageSize)
   }
 

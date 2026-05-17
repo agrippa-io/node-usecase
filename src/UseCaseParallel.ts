@@ -1,9 +1,9 @@
 import { Logger } from '@agrippa-io/node-utils'
 
-import { UseCase } from './UseCase'
+import { UseCase } from 'src/UseCase'
 
 export interface InterfaceUseCaseParallenNode<UseCaseType extends UseCase, UseCaseParameters> {
-  node: new (UseCaseParameters) => UseCaseType
+  node: new (params: UseCaseParameters) => UseCaseType
   parameters: UseCaseParameters
 }
 
@@ -39,7 +39,7 @@ export class UseCaseParallel extends UseCase {
 
       await Promise.all(performPromises)
 
-      const data = {}
+      const data: Record<string, any> = {}
 
       instantiatedUseCases.forEach(
         (useCaseInstance) =>
