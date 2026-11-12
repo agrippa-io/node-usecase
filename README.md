@@ -1,4 +1,11 @@
 # UseCases
+
+> [!IMPORTANT]
+> **Frozen (2026-11): bug fixes only.** This package serves the Mongo-era
+> services (`node-event-handler`, `node-service-project-generation`). New
+> services should not depend on it. Replacement: nothing: new services do not use this abstraction. See
+> [shared-libs-1](https://github.com/agrippa-io/agrippa-stack/tree/develop/epics/shared-libs-1).
+
 The `UseCases` library is used to create re-usable actions that represent
 executing the logic for carrying out operations specific to a `UseCase
 `. Included in the library are `UseCaseChain` and `UseCaseParallel` used to
